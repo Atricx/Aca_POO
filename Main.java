@@ -42,7 +42,10 @@ public class Main {
                 case 3:
                     buscarProducto();
                     break;
-                case 4:
+                case 4: // NUEVA OPCIÓN
+                    Inventario.calcularTotalPrecios();
+                    break;
+                case 5:
                     System.out.println("Gracias por usar el sistema. ¡Hasta pronto!");
                     break;
                 default:
@@ -51,7 +54,7 @@ public class Main {
                     }
             }
 
-        } while (opcion != 4);
+        } while (opcion != 5);
 
         scanner.close();
     }
@@ -62,7 +65,8 @@ public class Main {
         System.out.println("1. Registrar producto");
         System.out.println("2. Mostrar todos los producto");
         System.out.println("3. Buscar producto por codigo");
-        System.out.println("4. Salir");
+        System.out.println("4. Valor Total");
+        System.out.println("5. Salir");
         System.out.print("Elija una opción: ");
     }
 

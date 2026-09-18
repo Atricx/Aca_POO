@@ -39,9 +39,21 @@ public class Inventario {
         for (Producto p : Productos) {
             p.mostrarInformacion();
             System.out.println("-----------------------------");
+            
         }
+        
     }
 
+    public double calcularTotalPrecios() {
+        double total = 0;
+        for (Producto p : Productos) {
+            total += p.getPrecio()* p.getCantidad();
+        }
+        System.out.println("Valor total del inventario: " + total);
+        return total;
+       
+
+    }
     //Funcion buscar por codigo///
     public Producto buscarPorCodigo(String codigo) throws ProductoNoEncontradoException {
         for (Producto p : Productos) {
