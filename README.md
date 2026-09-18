@@ -16,7 +16,7 @@ Este proyecto consiste en una aplicación de consola en **Java** diseñada para 
 ## ⚙️ Funciones Principales
 1. **Registrar Producto:** Permite ingresar productos en memoria.Ofrece la opción de registrar un **Producto Perecedero** (agregando fecha de vencimiento) o un **Producto Importado** (agregando meses de garantía).
 2. **Mostrar Productos:** Recorre la lista dinámica mostrando la información detallada de cada producto y calcula automáticamente el **valor total acumulado del inventario** (`precio * cantidad`).
-3. **Buscar Producto por Código:** Busca un producto específico según su código único. Si el código no existe, el sistema gestiona la búsqueda mediante una excepción personalizada sin detener la ejecución del programa [4, 7, 8].
+3. **Buscar Producto por Código:** Busca un producto específico según su código único. Si el código no existe, el sistema gestiona la búsqueda mediante una excepción personalizada sin detener la ejecución del programa.
 4. **Validación de Entradas:** Captura errores de formato en las entradas del usuario (ej. texto ingresado donde se esperaba un número) utilizando bloques de control de excepciones `try-catch` [7].
 
 ---
