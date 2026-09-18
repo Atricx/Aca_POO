@@ -18,6 +18,6 @@ public class ProductoImportado extends Producto {
     public void mostrarInformacion() {
         System.out.println("Tipo: Producto Importado");
         super.mostrarInformacion();
-        System.out.println("mesesGarantia: " + mesesGarantia + " Meses");
+        System.out.println("Meses de Garantia: " + mesesGarantia + " Meses");
     }
 }

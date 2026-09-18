@@ -42,10 +42,13 @@ public class Main {
                 case 3:
                     buscarProducto();
                     break;
-                case 4: // NUEVA OPCIÓN
-                    Inventario.calcularTotalPrecios();
+                case 4: 
+                    eliminarProducto();
                     break;
                 case 5:
+                    Inventario.calcularTotalPrecios();
+                    break;
+                case 6:
                     System.out.println("Gracias por usar el sistema. ¡Hasta pronto!");
                     break;
                 default:
@@ -54,7 +57,7 @@ public class Main {
                     }
             }
 
-        } while (opcion != 5);
+        } while (opcion != 6);
 
         scanner.close();
     }
@@ -65,8 +68,9 @@ public class Main {
         System.out.println("1. Registrar producto");
         System.out.println("2. Mostrar todos los producto");
         System.out.println("3. Buscar producto por codigo");
-        System.out.println("4. Valor Total");
-        System.out.println("5. Salir");
+        System.out.println("4. Eliminar producto");
+        System.out.println("5. Valor Total de existencias");
+        System.out.println("6. Salir");
         System.out.print("Elija una opción: ");
     }
 
@@ -100,7 +104,7 @@ public class Main {
                 Inventario.registrar(perecedero);
 
             } else if (tipo.equals("2")) {
-                System.out.print("Meses de Garantia (cc): ");
+                System.out.print("Meses de Garantia: ");
                 int meses = Integer.parseInt(scanner.nextLine());
                 ProductoImportado producto = new ProductoImportado(nombre,cantidad1, codigo, precio, meses);
                 Inventario.registrar(producto);
@@ -113,7 +117,7 @@ public class Main {
             System.out.println("Producto registrado correctamente.\n");
 
         } catch (NumberFormatException e) {
-            System.out.println("Error: año, precio, puertas o cilindraje deben ser valores numéricos.");
+            System.out.println("Error: Formato Incorrecto.");
             System.out.println("No se registró el Producto.\n");
         }
     }
@@ -126,7 +130,23 @@ public class Main {
         try {
             Producto encontrado = Inventario.buscarPorCodigo(codigo);
             System.out.println();
-            encontrado.mostrarInformacion(); // aquí también se ve el polimorfismo
+            encontrado.mostrarInformacion(); 
+            System.out.println();
+        } catch (ProductoNoEncontradoException e) {
+            System.out.println("Error: " + e.getMessage() + "\n");
+        }
+    }
+
+
+    ////Funcion eliminar por Placa////
+    private static void eliminarProducto() {
+        System.out.print("Ingrese el codigo del producto: ");
+        String codigo = scanner.nextLine();
+
+        try {
+            Producto encontrado = Inventario.eliminarporCodigo(codigo);
+            System.out.println();
+            encontrado.mostrarInformacion();
             System.out.println();
         } catch (ProductoNoEncontradoException e) {
             System.out.println("Error: " + e.getMessage() + "\n");

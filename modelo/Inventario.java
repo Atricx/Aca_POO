@@ -43,7 +43,7 @@ public class Inventario {
         }
         
     }
-
+    /////Funcion Calcular total del inventario/////
     public double calcularTotalPrecios() {
         double total = 0;
         for (Producto p : Productos) {
@@ -58,6 +58,17 @@ public class Inventario {
     public Producto buscarPorCodigo(String codigo) throws ProductoNoEncontradoException {
         for (Producto p : Productos) {
             if (p.getCodigo().equalsIgnoreCase(codigo)) {
+                return p;
+            }
+        }
+        throw new ProductoNoEncontradoException("No existe ningún producto con codigo " + codigo);
+    }
+     //// eliminar por codigo ////
+     public Producto eliminarporCodigo(String codigo) throws ProductoNoEncontradoException {
+        for (Producto p : Productos) {
+            if (p.getCodigo().equalsIgnoreCase(codigo)) {
+                Productos.remove(p); // elimina el producto de la lista
+                System.out.println("Producto con código " + codigo + " eliminado correctamente.");
                 return p;
             }
         }
