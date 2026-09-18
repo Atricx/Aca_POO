@@ -106,7 +106,7 @@ public class Main {
             } else if (tipo.equals("2")) {
                 System.out.print("Meses de Garantia: ");
                 int meses = Integer.parseInt(scanner.nextLine());
-                ProductoImportado producto = new ProductoImportado(nombre,cantidad1, codigo, precio, meses);
+                ProductoImportado producto = new ProductoImportado(nombre,cantidad1,codigo, precio, meses);
                 Inventario.registrar(producto);
 
             } else {
@@ -122,7 +122,7 @@ public class Main {
         }
     }
 
-    ////Funcion Buscar por Placa////
+    ////Funcion Buscar por codigo////
     private static void buscarProducto() {
         System.out.print("Ingrese el codigo a buscar: ");
         String codigo = scanner.nextLine();
@@ -138,7 +138,7 @@ public class Main {
     }
 
 
-    ////Funcion eliminar por Placa////
+    ////Funcion eliminar por codigo////
     private static void eliminarProducto() {
         System.out.print("Ingrese el codigo del producto: ");
         String codigo = scanner.nextLine();

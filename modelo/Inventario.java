@@ -63,7 +63,7 @@ public class Inventario {
         }
         throw new ProductoNoEncontradoException("No existe ningún producto con codigo " + codigo);
     }
-     //// eliminar por codigo ////
+     //// Funcion eliminar por codigo ////
      public Producto eliminarporCodigo(String codigo) throws ProductoNoEncontradoException {
         for (Producto p : Productos) {
             if (p.getCodigo().equalsIgnoreCase(codigo)) {

@@ -2,8 +2,8 @@ package modelo;
 import java.time.LocalDate;
 
 
-//Subclase  que heredara los atributos de producto a excepcion de que esta añadira un nuevo valor que es la fecha de vencimiento 
-/// esto se realiza ajustando el metodo que permite el ingreso ajustando el formato que recibe 
+//Subclase que heredara los atributos de producto a excepcion de que esta añadira un nuevo valor que es la fecha de vencimiento 
+/// esto se realiza ajustando el formato que recibe el codigo.
 public class Productoperecedero extends Producto {
 
     private LocalDate Fv;
@@ -17,7 +17,7 @@ public class Productoperecedero extends Producto {
     //getter
     public LocalDate getFv() { return Fv; }
 
-    //// Aca añadimos la fecha de vencimiento  reajustando la funcion mostar info mediante la funcion override que pemite
+    //// Aca añadimos la fecha de vencimiento reajustando la funcion mostar info mediante la funcion override que permite
     /// traer la funcion desde la clase padre y añadir el valor de la fecha de vencimiento.
     @Override
     public void mostrarInformacion() {

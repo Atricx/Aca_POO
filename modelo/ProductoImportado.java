@@ -13,7 +13,7 @@ public class ProductoImportado extends Producto {
 
     public int getmesesGarantia() { return mesesGarantia; }
 
-   /// metodo overrride que permite sosbrescribir informacion dentro de la funcion mostrar info que se encuentra debtro de la clase padre
+   /// metodo overrride que permite sosbrescribir informacion dentro de la funcion mostrar info que se encuentra dentro de la clase padre
     @Override
     public void mostrarInformacion() {
         System.out.println("Tipo: Producto Importado");
